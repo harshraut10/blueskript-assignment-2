@@ -21,7 +21,7 @@ const Characters = () => {
     },[url])
     return (
       <div className='containerDisp'>
-       
+      
       <div className="row_posters">
         {
           Char.map((itr)=>(

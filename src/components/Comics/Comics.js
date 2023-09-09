@@ -25,7 +25,7 @@ const Comics = () => {
       <div className="row_posters">
         {
           Char.map((itr)=>(
-            <div>
+            <div className='card'>
             <h1>{itr.title}</h1>
             <img className='poster' src={`${itr.thumbnail.path}.jpg`} alt=''/>
             <h2>Description: {itr.description}</h2>

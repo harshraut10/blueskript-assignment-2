@@ -1,27 +1,21 @@
-.row_posters{
-  
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 20px ;
-    color: aliceblue;
 
-    color: black;
-    background-color: aliceblue;
-    height: auto;
-    border-radius: 10px;
-    padding: 10px;
-    
-  }
   
-  .poster{
+  /* .poster{
     max-height: 100px;
-  }
+
+  } */
 
   .containerDisp{
-    color: black;
-    background-color: aliceblue;
+    /* width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 30px;
     height: auto;
     border-radius: 10px;
-    padding: 10px;
+    background-color: rgb(246, 246, 254); */
+
+   
+  
     
 }

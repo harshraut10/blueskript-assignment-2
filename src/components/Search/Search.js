@@ -12,13 +12,14 @@ const Search = () => {
     //`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${API_KEY}&hash=${hash}`
     const hash='577255e0396c8e63415bf55dc4d2fbf0'
     const [Char, setChar]=useState([])
-    const [url,setUrl]=useState(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=${API_KEY}&hash=${hash}`)
+    //const [url,setUrl]=useState(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=${API_KEY}&hash=${hash}`)
     //const test='http://gateway.marvel.com:443/v1/public/characters?limit=40&apikey=22413d0c40557a8f2fff693353b86b5f'
     // let Data
+    const url=`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=${API_KEY}&hash=${hash}`
 
     
     useEffect(()=>{
-      setUrl(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=22413d0c40557a8f2fff693353b86b5f&hash=577255e0396c8e63415bf55dc4d2fbf0`)
+      //setUrl(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=22413d0c40557a8f2fff693353b86b5f&hash=577255e0396c8e63415bf55dc4d2fbf0`)
       const fetch = async()=>{
         const res=await axios.get(url)
         console.log(res.data.data.results)
