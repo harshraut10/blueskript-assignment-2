@@ -11,5 +11,17 @@
     max-height: 100px;
   } */
 
+  .iterator{
+    width:800px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: auto;
+    border-radius: 10px;
+    background-color: rgb(246, 246, 254);
+}
+
 
   

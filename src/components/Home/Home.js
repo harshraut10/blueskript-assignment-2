@@ -34,7 +34,7 @@ const Home = () => {
       else if(lastElement=== null){
         dispatch(changeFn({comicsBtn:false,charBtn:false,home:true,searchBtn:false}))
       }
-    },[lastElement])
+    },[lastElement,dispatch])
 
   
 
@@ -56,7 +56,7 @@ const Home = () => {
   }
    
   return (
-    <div className='containerHome'>
+    <div className='1containerHome'>
       {/* <Characters/>
       <Comics/> */}
       <Routes>

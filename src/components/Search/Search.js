@@ -35,8 +35,8 @@ const Search = () => {
       <div className="row_posters">
         {
           Char.map((itr)=>(
-            <div>
-            <h1>{itr.title}</h1>
+            <div className='iterator'>
+            <h1>{itr.name}</h1>
             <img className='poster' src={`${itr.thumbnail.path}.jpg` } alt='Not found'/>
             <h2>Description: {itr.description}</h2>
             {/* <h2>Page Count: {itr.pageCount}</h2>
