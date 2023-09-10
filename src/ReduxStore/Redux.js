@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialStateValue={comicsBtn:false,charBtn:false, searchVal:'',searchBtn:false,home:true,viewData:[] ,
-name:false,date:false,asc:false,dsc:false,
-coDate:false, coFocDate:false, coOSD:false, coIN:false, coAsc:false,coDsc:false
-
+const initialStateValue={
+    comicsBtn:false,charBtn:false, searchVal:'',searchBtn:false,home:true,viewData:[] , //for navigation
+    name:false,date:false,asc:false,dsc:false, //dropdown states for character section
+   coDate:false, coFocDate:false, coOSD:false, coIN:false, coAsc:false,coDsc:false //dropdown states for comics section
+   
 }
     
 export const storeSlice= createSlice({

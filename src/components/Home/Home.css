@@ -1,12 +1,8 @@
 .containerHome{
-
-    width: 1300px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding-bottom: 30px;
-    height: auto;
-    border-radius: 10px;
-    background-color: rgb(246, 246, 254);
-  
-  }
+width: 1300px;
+display: flex;
+flex-direction: column;
+margin: auto;
+padding-bottom: 30px;
+height: auto;
+}

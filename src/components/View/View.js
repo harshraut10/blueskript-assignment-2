@@ -1,11 +1,12 @@
+//This component is used to display details about the selected card
 import React from 'react'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 const View = (props) => {
     const data=useSelector((state)=> state.navBtn.value)
-    console.log(data)
   return (
     <div>
       {
+        // show details of card if it is from comics section
       data.comicsBtn ? data.viewData.map((itr)=>(
             <div className='iterator'>
             <h1>{itr.title}</h1>
@@ -16,7 +17,8 @@ const View = (props) => {
             <h2>Issue No. {itr.issueNumber}</h2>
             </div>
              )) : 
-
+             
+          // show details of card if it is from character section
              data.viewData.map((itr)=>(
              <div className='iterator'>
             <h1>{itr.name}</h1>

@@ -16,3 +16,9 @@
   .poster{
     max-height: 600px;
   }
+
+  .welcome h1{
+    color: aliceblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100px;
+  }

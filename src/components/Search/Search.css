@@ -23,3 +23,10 @@
     border-radius: 10px;
     background-color: rgb(246, 246, 254);
 }
+
+
+.loading{
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: 90px;
+}

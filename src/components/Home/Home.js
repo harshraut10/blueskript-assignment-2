@@ -14,6 +14,7 @@ import View from '../View/View';
 
 const Home = () => {
     const dispatch=useDispatch();
+    //retrieving the path of the URL
     var path = window.location.pathname;
     // Split the path by '/'
     var pathArray = path.split('/');
@@ -22,6 +23,7 @@ const Home = () => {
     console.log("Last Element:", lastElement);
 
     useEffect(()=>{
+      //setting the store values based on the last element of the path
       if(lastElement==='comics'){
         dispatch(changeFn({comicsBtn:true,charBtn:false,home:false,searchBtn:false}))
        }
@@ -40,8 +42,11 @@ const Home = () => {
   
 
   let content;
+
+  //extracting data from the redux store
   const btn_val=useSelector((state)=> state.navBtn.value)
 
+  //setting the content
   if(btn_val.comicsBtn)
   {
     content=<Route path='/comics' element={<Comics/>} />
@@ -60,9 +65,8 @@ const Home = () => {
   }
    
   return (
-    <div className='1containerHome'>
-      {/* <Characters/>
-      <Comics/> */}
+    <div className='containerHome'>
+
       <Routes>
       <Route path="/comics/view" element={<View  />}/>
       <Route path="/characters/view" element={<View  />}/>

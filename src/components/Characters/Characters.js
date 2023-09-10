@@ -8,71 +8,54 @@ import { useSelector } from 'react-redux';
 import { changeFn } from '../../ReduxStore/Redux';
 const Characters = () => {
 
-  const [loading,setLoading]=useState(true)
+  const [loading,setLoading]=useState(true) //displayed while fetching the data 
   const reduxData=useSelector((state)=> state.navBtn.value)
   const dispatch=useDispatch();
     const API_KEY='22413d0c40557a8f2fff693353b86b5f'
    
     const hash='577255e0396c8e63415bf55dc4d2fbf0'
     const [Char, setChar]=useState([])
-   
-    let baseUrl='https://gateway.marvel.com:443/v1/public/characters?limit=98&ts=1&apikey=';
+   let baseUrl;
+   baseUrl='https://gateway.marvel.com:443/v1/public/characters?limit=98&ts=1&apikey=';
     let url=`${baseUrl}${API_KEY}&hash=${hash}`
-    // useEffect(()=>{
-    //   if(reduxData.name && reduxData.asc){
-    //     console.log('url set')
-    //     baseUrl='https://gateway.marvel.com:443/v1/public/characters?orderBy=-name&limit=98&ts=1&apikey='
-    //     url=`${baseUrl}${API_KEY}&hash=${hash}`
-    //   }
-    // },[reduxData.name,reduxData.asc,url,baseUrl])
-
-    // const url=`${baseUrl}${API_KEY}&hash=${hash}`
-    // let Data
     useEffect(()=>{
       setLoading(true)
+      //setting the url based on the selected options from the drop down menu
       if(reduxData.charBtn)
      { 
       if(reduxData.name && reduxData.asc){
-        console.log('url set')
         baseUrl='https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=98&ts=1&apikey='
         url=`${baseUrl}${API_KEY}&hash=${hash}`
       }
       else if(reduxData.name && reduxData.dsc){
-          console.log('url set')
           baseUrl='https://gateway.marvel.com:443/v1/public/characters?orderBy=-name&limit=98&ts=1&apikey='
           url=`${baseUrl}${API_KEY}&hash=${hash}`
       }
 
       else if(reduxData.date && reduxData.asc){
-        console.log('url set')
         baseUrl='https://gateway.marvel.com:443/v1/public/characters?orderBy=modified&limit=98&ts=1&apikey='
         url=`${baseUrl}${API_KEY}&hash=${hash}`
     }
     else{
-      console.log('url set')
         baseUrl='https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=98&ts=1&apikey='
         url=`${baseUrl}${API_KEY}&hash=${hash}`
     }
   }
+    //fetching the data
       const fetch = async()=>{
         const res=await axios.get(url)
         if(res){
           setLoading(false)
         }
-        console.log(res.data.data.results)
         setChar(res.data.data.results)
-          // Data=res.data.data.results
-        // console.log(res)
       }
       fetch();
     },[url,baseUrl,reduxData.name,reduxData.asc,reduxData.dsc,reduxData.date,dispatch])
 
-
+    //filtering the data inorder to get the character to display its details in new route
     const sortFn=(id)=>{
       const filteredItems = Char.filter(item => item.id === id);
       dispatch(changeFn({...reduxData,viewData:filteredItems}))
-       //console.log(filteredItems);
-
     }
     return (
       <div className='containerDisp'>
