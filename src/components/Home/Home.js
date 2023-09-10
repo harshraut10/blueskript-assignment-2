@@ -10,6 +10,7 @@ import { changeFn } from '../../ReduxStore/Redux';
 import { useEffect } from 'react';
 
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import View from '../View/View';
 
 const Home = () => {
     const dispatch=useDispatch();
@@ -54,12 +55,18 @@ const Home = () => {
   else if(btn_val.home){
     content=<Route path='/' element={<WelcomePage/>}/>
   }
+  else{
+    content=<Route path="/comics/view" element={<View/>}/>
+  }
    
   return (
     <div className='1containerHome'>
       {/* <Characters/>
       <Comics/> */}
       <Routes>
+      <Route path="/comics/view" element={<View  />}/>
+      <Route path="/characters/view" element={<View  />}/>
+       
        {content}
       </Routes>
     </div>
